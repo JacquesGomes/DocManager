@@ -1,5 +1,7 @@
 # Projeto_DocManager
-Gerenciador de documentos em c++
+Gerenciador de documentos em c++, com uma versão para json e outra para arquivos de texto simples
+
+O projeto ainda está em contrução.
 
 <br>
 project/ <br>
