@@ -1,8 +1,6 @@
 # Projeto_DocManager
 Gerenciador de documentos em c++
 
-
-project/
 <br>
 project/ <br>
 ├── src/ <br>
