@@ -4,43 +4,45 @@ Gerenciador de documentos em c++
 
 project/
 <br>
-├── src/
-│   ├── authentication/
-│   │   └── UserAuthentication.cpp
-│   ├── filemanagement/
-│   │   ├── FileManager.cpp
-│   ├── menu/
-│   │   ├── Menu.cpp
-│   ├── sorting/
-│   │   └── Sorting.cpp
-│   ├── file/
-│   │   ├── TaskFile.cpp
-│   │   ├── TableFile.cpp
-│   │   └── ReportFile.cpp
-│   └── main.cpp
-├── include/
-│   ├── authentication/
-│   │   └── UserAuthentication.hpp
-│   ├── filemanagement/
-│   │   └── FileManager.hpp
-│   ├── menu/
-│   │   └── Menu.hpp
-│   ├── sorting/
-│   │   └── Sorting.hpp
-│   └── file/
-│       ├── File.hpp
-│       ├── TaskFile.hpp
-│       ├── TableFile.hpp
-│       └── ReportFile.hpp
-├── bin/
-├── data/
-│   ├── users.txt
-│   ├── tasks/
-│   ├── tables/
-│   └── reports/
-├── docs/
-│   └── README.md
+project/ <br>
+├── src/ <br>
+│   ├── authentication/ <br>
+│   │   └── UserAuthentication.cpp <br>
+│   ├── filemanagement/ <br>
+│   │   ├── FileManager.cpp <br>
+│   ├── menu/ <br>
+│   │   ├── Menu.cpp <br>
+│   ├── sorting/ <br>
+│   │   └── Sorting.cpp <br>
+│   ├── file/ <br>
+│   │   ├── TaskFile.cpp <br>
+│   │   ├── TableFile.cpp <br>
+│   │   └── ReportFile.cpp <br>
+│   └── main.cpp <br>
+├── include/ <br>
+│   ├── authentication/ <br>
+│   │   └── UserAuthentication.hpp <br>
+│   ├── filemanagement/ <br>
+│   │   └── FileManager.hpp <br>
+│   ├── menu/ <br>
+│   │   └── Menu.hpp <br>
+│   ├── sorting/ <br>
+│   │   └── Sorting.hpp <br>
+│   └── file/ <br>
+│       ├── File.hpp <br>
+│       ├── TaskFile.hpp <br>
+│       ├── TableFile.hpp <br>
+│       └── ReportFile.hpp <br>
+├── bin/ <br>
+├── data/ <br>
+│   ├── users.txt <br>
+│   ├── tasks/ <br>
+│   ├── tables/ <br>
+│   └── reports/ <br>
+├── docs/ <br>
+│   └── README.md <br>
 └── makefile
+
 
 Exemplo TaskFile:
 
@@ -53,7 +55,7 @@ Exemplo TaskFile:
   "atribuidaPor": "João Silva",
   "responsavel": "Marcos Oliveira",
   "assunto": "Implementação do recurso XYZ",
-  "descricao": "Detalhes da tarefa a ser realizada",
+  "descricao": "Detalhes da tarefa a ser realizada",\
   "notas": "Notas adicionais sobre a tarefa",
   "status": "Em andamento",
   "prioridade": "Alta",
