@@ -1,0 +1,3 @@
+Erro na herança do destrutor
+Implementar um tamanho máximo em alguns campos (título - que será utilizado como nome do arquivo; usuario - que será utilizado como user_id)
+

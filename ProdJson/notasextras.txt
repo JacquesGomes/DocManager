@@ -1,0 +1,23 @@
+=============== Atenção ==============
+
+Sobrecarga e polimorfismo
+
+Tads para orientação a objetos para a aplicação de pelo menos três estruturas de dados
+
+Busca binária recursiva e iterativa
+
+Pelo menos três algoritmos de ordenação
+
+
+=============== Outro ==============
+
+Discutir nos docs a eficiência dos algoritmos de busca e ordenação;
+
+Casos testes, gerações de dados aleatórios para simular desempenho do código usando profiling;
+
+docs -> doxygen + readme + doxyfile
+
+tests/: códigos para testes unitários de testes de funções (.cpp).
+
+Flags de warnings na compilação
+
