@@ -26,7 +26,7 @@ bool UserAuthentication::login(string usuario, string password){
 }
 
 void UserAuthentication::criarUsuario(string username, string password){
-    ofstream file("password.txt", ios::app);
+    ofstream file("data/password.txt", ios::app);
     file << username << ":" << password << "\n";
     file.close();
 

@@ -13,14 +13,13 @@ void Tarefa::imprimirConteudo(string nome){
 
     string path = currentDir;
 
-    size_t lastBar = path.find_last_of('/');
-
-    path = path.substr(0, lastBar);
     path = path + "/data/tasks/";
 
     string result = path + nome;
 
     ofstream arquivo_saida(result);
+
+    cout << result << endl;
 
     arquivo_saida << "Usuario: "<< this->getUsuario() << "\n";
 

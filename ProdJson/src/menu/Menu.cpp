@@ -10,9 +10,9 @@ void Menu::imprimirMenuTasks(string user){
 
     while(choice != 0){
 
-    cout << "1 - Criar arquivo\n2 - Imprimir conteúdo\n3 - Voltar\n0 - Sair\n";
+    cout << "\n1 - Criar arquivo\n2 - Imprimir conteúdo\n3 - Voltar\n0 - Sair\n";
 
-    cout << "Enter your choice: ";
+    cout << "\nEnter your choice: ";
     cin >> choice;
     if(choice == 1){
         Tarefa tarefinha;
@@ -39,8 +39,9 @@ void Menu::imprimirMenuMain() {
     
     while(choice != 0){
     cout << "\n1 - Login\n2 - Criar conta\n0 - Sair\n";
-    cout << "Enter your choice: ";
+    cout << "\nEnter your choice: ";
     cin >> choice;
+
     if (choice == 1) {
         cout << "Enter username: ";
         cin >> username;
@@ -56,6 +57,7 @@ void Menu::imprimirMenuMain() {
         } else {
             cout << "Invalid username or password.\n";
         }
+        
     } else if (choice == 2) {
         cout << "Enter username: ";
         cin >> username;
