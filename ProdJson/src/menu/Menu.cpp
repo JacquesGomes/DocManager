@@ -1,6 +1,8 @@
 #include "../../include/menu/Menu.hpp"
 #include <iostream>
 #include <string>
+#include <unistd.h>
+#include <fstream>
 
 using namespace std;
 
@@ -10,22 +12,59 @@ void Menu::imprimirMenuTasks(string user){
 
     while(choice != 0){
 
-    cout << "\n1 - Criar arquivo\n2 - Imprimir conteúdo\n3 - Voltar\n0 - Sair\n";
+    cout << "\n1 - Criar arquivo\n2 - Imprimir conteúdo\n0 - Sair\n";
 
-    cout << "\nEnter your choice: ";
+    cout << "\nDigite a opção desejada: ";
     cin >> choice;
+
     if(choice == 1){
         Tarefa tarefinha;
         tarefinha.criar(user);
         string nome = tarefinha.getTitulo();
         tarefinha.imprimirConteudo(nome);
     }
-    /*if(choice == 2){
+    else if(choice == 2){
         string nome;
         cout << "Insira o nome do arquivo: ";
-        cin >> nome;
-    }*/
+
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.clear();
+        getline(cin, nome);
+
+        char currentDir[FILENAME_MAX];
+        getcwd(currentDir, sizeof(currentDir));
+        string path = currentDir;
+        path = path + "/data/tasks/" + nome + ".json";
+  
+        ifstream file(path);
+
+        if(!file){
+            cout << "\nErro ao abrir o arquivo!";
+        }
+        else{
+            cout << "\nConteúdo do arquivo `" << nome << "` :\n";
+        }
+        
+        string linha;
+
+        while(getline(file, linha)){
+            cout << linha << endl;
+        }
+
+        file.close();
+        
     }
+
+    else if(choice == 0){
+        cout << "\nBem vindo de volta ao menu inicial!\n";
+    }
+
+    else{
+        cout << "Opção inválida";
+    }
+
+    }
+    
 
 }
 
@@ -37,39 +76,39 @@ void Menu::imprimirMenuMain() {
     
     while(choice != 0){
     cout << "\n1 - Login\n2 - Criar conta\n0 - Sair\n";
-    cout << "\nEnter your choice: ";
+    cout << "\nDigite a opção desejada: ";
     cin >> choice;
 
     if (choice == 1) {
-        cout << "Enter username: ";
+        cout << "Digite seu nome: ";
         cin >> username;
-        cout << "Enter password: ";
+        cout << "Digite sua senha: ";
         cin >> password;
 
         if (authentication.login(username, password)) {
-            cout << "Login successful!\n";
+            cout << "\nSucesso no login!\n";
                 if(choice == 1){
                 imprimirMenuTasks(username);
                 }
 
         } else {
-            cout << "Invalid username or password.\n";
+            cout << "\nNome ou senha inválido.\n";
         }
 
     } else if (choice == 2) {
-        cout << "Enter username: ";
+        cout << "Digite seu nome: ";
         cin >> username;
-        cout << "Enter password: ";
+        cout << "Digite sua senha: ";
         cin >> password;
 
         authentication.criarUsuario(username, password);
-        cout << "Account created successfully!\n";
+        cout << "Conta criada com sucesso!\n";
     } 
     else if(choice == 0){
         cout << "Tchau tchau\n";
     }
     else {
-        cout << "Invalid choice.\n";
+        cout << "Opção inválida.\n";
     }
     }
 
