@@ -6,7 +6,7 @@
 using namespace std;
 
 bool UserAuthentication::login(string usuario, string password){
-    ifstream file("password.txt");
+    ifstream file("data/password.txt");
 
     string line;
 

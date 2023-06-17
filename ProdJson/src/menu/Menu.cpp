@@ -17,9 +17,7 @@ void Menu::imprimirMenuTasks(string user){
     if(choice == 1){
         Tarefa tarefinha;
         tarefinha.criar(user);
-        string nome;
-        cout << "Insira o nome do arquivo: ";
-        cin >> nome;
+        string nome = tarefinha.getTitulo();
         tarefinha.imprimirConteudo(nome);
     }
     /*if(choice == 2){
@@ -57,7 +55,7 @@ void Menu::imprimirMenuMain() {
         } else {
             cout << "Invalid username or password.\n";
         }
-        
+
     } else if (choice == 2) {
         cout << "Enter username: ";
         cin >> username;

@@ -1,4 +1,5 @@
 #include "../../include/menu/Menu.hpp"
+#include <nlohmann/json.hpp>
 #include <iostream>
 #include <string>
 #include <unistd.h>
@@ -15,35 +16,26 @@ void Tarefa::imprimirConteudo(string nome){
 
     path = path + "/data/tasks/";
 
-    string result = path + nome;
+    string result = path + nome + ".json";
 
     ofstream arquivo_saida(result);
 
-    cout << result << endl;
+    nlohmann::json j;
 
-    arquivo_saida << "Usuario: "<< this->getUsuario() << "\n";
+    j["Usuário:"] = this->getUsuario();
+    j["Título:"] = this->getTitulo();
+    j["DataCriação:"] = this->getDataInicio();
+    j["Categoria:"] = this->getCategoria();
+    j["AtribuidaPor:"] = this->atribuidaPor;
+    j["Responsável:"] = this->responsavel;
+    j["Assunto:"] = this->assunto;
+    j["Descrição:"] = this->descricao;
+    j["Notas:"] = this->notas;
+    j["Status:"] = this->status;
+    j["Prioridade:"] = this->prioridade;
+    j["PrazoFinal:"] = this->dataFim;
 
-    arquivo_saida << "Título: "<< this->getTitulo() << "\n";
-
-    arquivo_saida << "Data de criação: "<< this->getDataInicio() << "\n";
-
-    arquivo_saida << "Categoria: "<< this->getCategoria() << "\n";
-
-    arquivo_saida << "Atribuída por: "<< this->atribuidaPor << "\n";
-
-    arquivo_saida << "Responsável: "<< this->responsavel << "\n";
-
-    arquivo_saida << "Assunto: "<< this->assunto << "\n";
-
-    arquivo_saida << "Descrição: "<< this->responsavel << "\n";
-
-    arquivo_saida << "Notas: "<< this->notas << "\n";
-
-    arquivo_saida << "Status: "<< this->status << "\n";
-
-    arquivo_saida << "Prioridade: "<< this->prioridade << "\n";
-
-    arquivo_saida << "Prazo final: "<< this->dataFim << "\n";
+    arquivo_saida << setw(2) << j << '\n';
 
     arquivo_saida.close();
 
@@ -131,7 +123,6 @@ void Tarefa::criar(string user){
     cout << "Data de criação: ";
     getline(cin, temp);
     this->setDataInicio(temp);
-
 
     cout << "Categoria: ";
     getline(cin, temp);
