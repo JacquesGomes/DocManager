@@ -45,7 +45,7 @@ public:
 
     void imprimirConteudo(string fileName) override;
     //void remover() override;
-    void criar() override;
+    void criar(string user) override;
 
 
 };

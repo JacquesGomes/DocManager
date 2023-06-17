@@ -22,7 +22,7 @@ class File{
         virtual void remover() = 0;*/
         virtual void imprimirConteudo(string fileName) = 0;
 
-        virtual void criar() = 0;
+        virtual void criar(string user) = 0;
 
         void setCaminhoArquivo(string caminho);
         string getCaminho();

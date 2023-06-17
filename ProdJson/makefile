@@ -14,7 +14,7 @@ SRCS := $(wildcard $(SRCDIR)/**/*.cpp $(SRCDIR)/*.cpp)
 OBJS := $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
 # Executable name
-EXEC := $(BINDIR)/myprogram
+EXEC := myprogram
 
 # Default target
 all: directories $(EXEC)

@@ -11,17 +11,42 @@ void Tarefa::imprimirConteudo(string nome){
     char currentDir[FILENAME_MAX];
     getcwd(currentDir, sizeof(currentDir));
 
-    cout << currentDir << "\n";
-    cout << nome << "\n";
+    string path = currentDir;
 
-    ofstream arquivo_saida(nome);
+    size_t lastBar = path.find_last_of('/');
+
+    path = path.substr(0, lastBar);
+    path = path + "/data/tasks/";
+
+    string result = path + nome;
+
+    ofstream arquivo_saida(result);
+
+    arquivo_saida << "Usuario: "<< this->getUsuario() << "\n";
+
+    arquivo_saida << "Título: "<< this->getTitulo() << "\n";
+
+    arquivo_saida << "Data de criação: "<< this->getDataInicio() << "\n";
+
+    arquivo_saida << "Categoria: "<< this->getCategoria() << "\n";
 
     arquivo_saida << "Atribuída por: "<< this->atribuidaPor << "\n";
 
     arquivo_saida << "Responsável: "<< this->responsavel << "\n";
 
-    arquivo_saida.close();
+    arquivo_saida << "Assunto: "<< this->assunto << "\n";
 
+    arquivo_saida << "Descrição: "<< this->responsavel << "\n";
+
+    arquivo_saida << "Notas: "<< this->notas << "\n";
+
+    arquivo_saida << "Status: "<< this->status << "\n";
+
+    arquivo_saida << "Prioridade: "<< this->prioridade << "\n";
+
+    arquivo_saida << "Prazo final: "<< this->dataFim << "\n";
+
+    arquivo_saida.close();
 
 }
 
@@ -89,7 +114,7 @@ void Tarefa::setDataFim(string dataFim) {
     this->dataFim = dataFim;
 }
 
-void Tarefa::criar(){
+void Tarefa::criar(string user){
 
     string temp;
 
@@ -97,6 +122,21 @@ void Tarefa::criar(){
 
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cin.clear();
+ 
+    this->setUsuario(user);
+
+    cout << "Título: ";
+    getline(cin, temp);
+    this->setTitulo(temp);
+
+    cout << "Data de criação: ";
+    getline(cin, temp);
+    this->setDataInicio(temp);
+
+
+    cout << "Categoria: ";
+    getline(cin, temp);
+    this->setCategoria(temp);
     
     cout << "Atribuída por: ";
     getline(cin, temp);
@@ -105,10 +145,6 @@ void Tarefa::criar(){
     cout << "Responsável: ";
     getline(cin, temp);
     this->setResponsavel(temp);
-
-    cout << "Título: ";
-    getline(cin, temp);
-    this->setTitulo(temp);
 
     cout << "Assunto: ";
     getline(cin, temp);

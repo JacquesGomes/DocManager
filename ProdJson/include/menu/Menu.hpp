@@ -10,10 +10,10 @@ class Menu{
     public:
         
         void imprimirMenuMain();
-        void imprimirMenuTasks();
-        void imprimirMenuReport();
-        void imprimirMenuTables();
-        void imprimirMenuAdm();
+        void imprimirMenuTasks(string user);
+        void imprimirMenuReport(string user);
+        void imprimirMenuTables(string user);
+        void imprimirMenuAdm(string user);
 };
 
 #endif

@@ -4,18 +4,19 @@
 
 using namespace std;
 
-void Menu::imprimirMenuTasks(){
+void Menu::imprimirMenuTasks(string user){
 
     int choice = 19;
 
     while(choice != 0){
+
     cout << "1 - Criar arquivo\n2 - Imprimir conteúdo\n3 - Voltar\n0 - Sair\n";
 
     cout << "Enter your choice: ";
     cin >> choice;
     if(choice == 1){
         Tarefa tarefinha;
-        tarefinha.criar();
+        tarefinha.criar(user);
         string nome;
         cout << "Insira o nome do arquivo: ";
         cin >> nome;
@@ -32,14 +33,14 @@ void Menu::imprimirMenuTasks(){
 
 void Menu::imprimirMenuMain() {
 
-    int choice;
+    int choice = 10;
     string username, password;
     UserAuthentication authentication;
-
-    cout << "1 - Login\n2 - Create Account\n";
+    
+    while(choice != 0){
+    cout << "\n1 - Login\n2 - Criar conta\n0 - Sair\n";
     cout << "Enter your choice: ";
     cin >> choice;
-
     if (choice == 1) {
         cout << "Enter username: ";
         cin >> username;
@@ -49,7 +50,7 @@ void Menu::imprimirMenuMain() {
         if (authentication.login(username, password)) {
             cout << "Login successful!\n";
                 if(choice == 1){
-                imprimirMenuTasks();
+                imprimirMenuTasks(username);
                 }
 
         } else {
@@ -63,8 +64,13 @@ void Menu::imprimirMenuMain() {
 
         authentication.criarUsuario(username, password);
         cout << "Account created successfully!\n";
-    } else {
+    } 
+    else if(choice == 0){
+        cout << "Tchau tchau\n";
+    }
+    else {
         cout << "Invalid choice.\n";
+    }
     }
 
 }
