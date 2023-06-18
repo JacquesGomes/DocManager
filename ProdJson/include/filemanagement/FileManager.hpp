@@ -1,6 +1,9 @@
-#ifndef FILEMANAGER_HPP
+/*#ifndef FILEMANAGER_HPP
 #define FILEMANAGER_HPP
 #include <nlohmann/json.hpp>
+#include <iostream>
+#include <string>
+
 
 class FileManager{
     public:
@@ -15,6 +18,7 @@ class FileManager{
 
         nlohmann::json lerArquivoJson(string caminho);
         nlohmann::json escreverArquivoJson(string caminho, nlohmann::json conteudo);
+
 };
 
-#endif
+#endif*/

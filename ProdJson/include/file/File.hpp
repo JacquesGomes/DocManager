@@ -38,6 +38,8 @@ class File{
 
         void setCategoria(string categoria);
         string getCategoria();
+
+        bool checarFormatoData(string data);
 };
 
 

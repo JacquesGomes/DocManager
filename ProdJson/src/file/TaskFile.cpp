@@ -4,42 +4,9 @@
 #include <string>
 #include <unistd.h>
 #include <fstream>
+#include "../../include/filemanagement/FileManager.hpp"
 
 using namespace std;
-
-void Tarefa::imprimirConteudo(string nome){
-    
-    char currentDir[FILENAME_MAX];
-    getcwd(currentDir, sizeof(currentDir));
-
-    string path = currentDir;
-
-    path = path + "/data/tasks/";
-
-    string result = path + nome + ".json";
-
-    ofstream arquivo_saida(result);
-
-    nlohmann::json j;
-
-    j["Usuário:"] = this->getUsuario();
-    j["Título:"] = this->getTitulo();
-    j["DataCriação:"] = this->getDataInicio();
-    j["Categoria:"] = this->getCategoria();
-    j["AtribuidaPor:"] = this->atribuidaPor;
-    j["Responsável:"] = this->responsavel;
-    j["Assunto:"] = this->assunto;
-    j["Descrição:"] = this->descricao;
-    j["Notas:"] = this->notas;
-    j["Status:"] = this->status;
-    j["Prioridade:"] = this->prioridade;
-    j["PrazoFinal:"] = this->dataFim;
-
-    arquivo_saida << setw(2) << j << '\n';
-
-    arquivo_saida.close();
-
-}
 
 string Tarefa::getAtribuidaPor() {
     return atribuidaPor;
@@ -105,6 +72,40 @@ void Tarefa::setDataFim(string dataFim) {
     this->dataFim = dataFim;
 }
 
+void Tarefa::imprimirConteudo(string nome){
+    
+    char currentDir[FILENAME_MAX];
+    getcwd(currentDir, sizeof(currentDir));
+
+    string path = currentDir;
+
+    path = path + "/data/tasks/";
+
+    string result = path + nome + ".json";
+
+    ofstream arquivo_saida(result);
+
+    nlohmann::json j;
+
+    j["Usuário:"] = this->getUsuario();
+    j["Título:"] = this->getTitulo();
+    j["DataCriação:"] = this->getDataInicio();
+    j["Categoria:"] = this->getCategoria();
+    j["AtribuidaPor:"] = this->atribuidaPor;
+    j["Responsável:"] = this->responsavel;
+    j["Assunto:"] = this->assunto;
+    j["Descrição:"] = this->descricao;
+    j["Notas:"] = this->notas;
+    j["Status:"] = this->status;
+    j["Prioridade:"] = this->prioridade;
+    j["PrazoFinal:"] = this->dataFim;
+
+    arquivo_saida << setw(2) << j << '\n';
+
+    arquivo_saida.close();
+
+}
+
 void Tarefa::criar(string user){
 
     string temp;
@@ -119,10 +120,6 @@ void Tarefa::criar(string user){
     cout << "Título: ";
     getline(cin, temp);
     this->setTitulo(temp);
-
-    cout << "Data de criação: ";
-    getline(cin, temp);
-    this->setDataInicio(temp);
 
     cout << "Categoria: ";
     getline(cin, temp);
@@ -158,10 +155,24 @@ void Tarefa::criar(string user){
 
     cout << "Data de início: ";
     getline(cin, temp);
+   
+    while(!checarFormatoData(temp)){
+        cout << "Formato de data inválido! Tente inserir algo como D/M/A." << endl;
+        getline(cin, temp);
+        
+    }
+
     this->setDataInicio(temp);
 
     cout << "Data de entrega: ";
     getline(cin, temp);
+
+    while(!checarFormatoData(temp)){
+        cout << "Formato de data inválido! Tente inserir algo como D/M/A." << endl;
+        getline(cin, temp);
+        
+    }
+
     this->setDataFim(temp);
 
     
