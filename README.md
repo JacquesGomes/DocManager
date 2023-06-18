@@ -59,5 +59,5 @@ Exemplo TaskFile:
   "notas": "Notas adicionais sobre a tarefa",
   "status": "Em andamento",
   "prioridade": "Alta",
-  "dataFim": "2023-06-30"
+  "dataFim": "03/02/2024"
 }
