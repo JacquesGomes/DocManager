@@ -4,6 +4,7 @@
 class FileManager{
     public:
         bool criarDiretorio(string nome, string username);
+        bool imprimirArquivo(string nome, string username);
 };
 
 #endif

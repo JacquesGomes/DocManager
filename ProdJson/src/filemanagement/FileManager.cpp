@@ -5,17 +5,16 @@
 #include <unistd.h>
 #include <filesystem>
 
-//#include "../../include/filemanagement/FileManager.hpp"
+#include "../../include/filemanagement/FileManager.hpp"
 
 using namespace std;
-/*
+
 bool FileManager::criarDiretorio(string nome, string user){
 
-   Implentação do criar directorio ou não
     char currentDir[FILENAME_MAX];
     getcwd(currentDir, sizeof(currentDir));
     string path = currentDir;
-    path = path + "/" + "teste";
+    //path = path + "/" + "teste";
     cout << path << endl;
 
         // Check if directory exists and create it if it doesn't
@@ -33,8 +32,9 @@ bool FileManager::criarDiretorio(string nome, string user){
 
         
 
-bool imprimirArquivo(string nome, string user){
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+bool FileManager::imprimirEmArquivo(string nome, string user){
+
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cin.clear();
         getline(cin, nome);
 
@@ -60,7 +60,7 @@ bool imprimirArquivo(string nome, string user){
 
         file.close();
 }
-        */
+        
 int main(){
 
     char currentDir[FILENAME_MAX];

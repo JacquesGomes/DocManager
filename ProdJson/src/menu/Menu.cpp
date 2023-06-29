@@ -34,7 +34,14 @@ void Menu::imprimirMenuTasks(string user){
         cin >> nome;
 
         FileManager manager;
-        manager.criarDiretorio(nome, user);
+        bool teste = manager.criarDiretorio(nome, user);
+        if(teste == false){
+            cout << "Erro ao acessar o seu diretório";
+        }
+        else{
+            manager.imprimirArquivo(nome, user);
+        }
+
         
     }
 
