@@ -13,7 +13,7 @@ void Menu::imprimirMenuTasks(string user){
 
     while(choice != 0){
 
-    cout << "\n1 - Criar arquivo\n2 - Imprimir conteúdo\n3 - Listar arquivos\n0 - Sair\n";
+    cout << "\n1 - Criar arquivo\n2 - Imprimir arquivo\n3 - Listar arquivos\n0 - Sair\n";
 
     cout << "\nDigite a opção desejada: ";
     cin >> choice;
@@ -22,31 +22,34 @@ void Menu::imprimirMenuTasks(string user){
 
         Tarefa tarefinha;
         tarefinha.criar(user);
-        string nome = tarefinha.getTitulo();
-        tarefinha.imprimirConteudo(nome, user);
+        string arquivo = tarefinha.getTitulo();
+
+        FileManager manager;
+        bool teste = manager.criarDiretorio(user);
+
+        if(teste == false) {
+            cout << "Erro ao criar/acessar o diretório do usuário";
+        }
+        else{
+            tarefinha.salvarTask(arquivo, user);
+        }
 
     }
 
     else if(choice == 2){
 
-        string nome;
+        string arquivo;
         cout << "Insira o nome do arquivo: ";
-        cin >> nome;
+        cin >> arquivo;
 
         FileManager manager;
-        bool teste = manager.criarDiretorio(nome, user);
-        if(teste == false){
-            cout << "Erro ao acessar o seu diretório";
-        }
-        else{
-            manager.imprimirArquivo(nome, user);
-        }
+        manager.imprimirArquivo(arquivo, user);
 
-        
     }
 
     else if(choice == 3){
-
+        FileManager manager;
+        manager.imprimirArquivosUser(user);
     }
 
     else if(choice == 0){

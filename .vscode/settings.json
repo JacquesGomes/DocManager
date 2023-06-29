@@ -1,5 +1,10 @@
 {
     "files.associations": {
-        "iostream": "cpp"
-    }
+        "iostream": "cpp",
+        "string": "cpp",
+        "chrono": "cpp",
+        "ostream": "cpp",
+        "filesystem": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "enabled"
 }

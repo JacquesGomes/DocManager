@@ -12,8 +12,6 @@ class Menu{
         
         void imprimirMenuMain();
         void imprimirMenuTasks(string user);
-        void imprimirMenuReport(string user);
-        void imprimirMenuTables(string user);
         void imprimirMenuAdm(string user);
 };
 

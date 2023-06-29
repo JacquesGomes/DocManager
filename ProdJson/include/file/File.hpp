@@ -20,7 +20,7 @@ class File{
         /*virtual ~File() = 0;
         virtual void criar() = 0;
         virtual void remover() = 0;*/
-        virtual void imprimirConteudo(string fileName, string username) = 0;
+        virtual void salvarTask(string fileName, string username) = 0;
 
         virtual void criar(string user) = 0;
 

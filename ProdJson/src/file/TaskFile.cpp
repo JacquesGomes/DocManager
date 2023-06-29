@@ -78,20 +78,17 @@ void Tarefa::setDataFim(string dataFim)
 
 /*============Methods===========*/
 
-void Tarefa::imprimirConteudo(string nome, string user)
+void Tarefa::salvarTask(string nome, string user)
 {
 
     char currentDir[FILENAME_MAX];
     getcwd(currentDir, sizeof(currentDir));
-
     string path = currentDir;
 
-    path = path + "/data/tasks/";
+    path = path + "/data/tasks/" + user + "/" + nome + ".json";
+    cout << path << endl;
 
-    string result = path + user + "/" + nome + ".json";
-    cout << result << endl;
-
-    ofstream arquivo_saida(result);
+    ofstream arquivo_saida(path);
 
     nlohmann::json j;
 
