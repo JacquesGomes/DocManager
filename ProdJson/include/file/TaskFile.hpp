@@ -43,7 +43,7 @@ public:
     string getDataFim();
     void setDataFim(string dataFim);
 
-    void imprimirConteudo(string fileName) override;
+    void imprimirConteudo(string fileName, string username) override;
     //void remover() override;
     void criar(string user) override;
 

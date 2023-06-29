@@ -8,72 +8,79 @@
 
 using namespace std;
 
-string Tarefa::getAtribuidaPor() {
+/*=========Getters and Setters ==========*/
+
+string Tarefa::getAtribuidaPor()
+{
     return atribuidaPor;
 }
-
-void Tarefa::setAtribuidaPor(string atribuidaPor) {
+void Tarefa::setAtribuidaPor(string atribuidaPor)
+{
     this->atribuidaPor = atribuidaPor;
 }
-
-string Tarefa::getResponsavel() {
+string Tarefa::getResponsavel()
+{
     return responsavel;
 }
-
-void Tarefa::setResponsavel(string responsavel) {
+void Tarefa::setResponsavel(string responsavel)
+{
     this->responsavel = responsavel;
 }
-
-string Tarefa::getAssunto() {
+string Tarefa::getAssunto()
+{
     return assunto;
 }
-
-void Tarefa::setAssunto(string assunto) {
+void Tarefa::setAssunto(string assunto)
+{
     this->assunto = assunto;
 }
-
-string Tarefa::getDescricao() {
+string Tarefa::getDescricao()
+{
     return descricao;
 }
-
-void Tarefa::setDescricao(string descricao) {
+void Tarefa::setDescricao(string descricao)
+{
     this->descricao = descricao;
 }
-
-string Tarefa::getNotas() {
+string Tarefa::getNotas()
+{
     return notas;
 }
-
-void Tarefa::setNotas(string notas) {
+void Tarefa::setNotas(string notas)
+{
     this->notas = notas;
 }
-
-string Tarefa::getStatus() {
+string Tarefa::getStatus()
+{
     return status;
 }
-
-void Tarefa::setStatus(string status) {
+void Tarefa::setStatus(string status)
+{
     this->status = status;
 }
-
-string Tarefa::getPrioridade() {
+string Tarefa::getPrioridade()
+{
     return prioridade;
 }
-
-void Tarefa::setPrioridade(string prioridade) {
+void Tarefa::setPrioridade(string prioridade)
+{
     this->prioridade = prioridade;
 }
-
-string Tarefa::getDataFim() {
+string Tarefa::getDataFim()
+{
     return dataFim;
 }
-
-void Tarefa::setDataFim(string dataFim) {
+void Tarefa::setDataFim(string dataFim)
+{
     this->dataFim = dataFim;
 }
 
-void Tarefa::imprimirConteudo(string nome){
-    
+
+/*============Methods===========*/
+
+void Tarefa::imprimirConteudo(string nome, string user)
+{
+
     char currentDir[FILENAME_MAX];
     getcwd(currentDir, sizeof(currentDir));
 
@@ -81,7 +88,8 @@ void Tarefa::imprimirConteudo(string nome){
 
     path = path + "/data/tasks/";
 
-    string result = path + nome + ".json";
+    string result = path + user + "/" + nome + ".json";
+    cout << result << endl;
 
     ofstream arquivo_saida(result);
 
@@ -103,10 +111,10 @@ void Tarefa::imprimirConteudo(string nome){
     arquivo_saida << setw(2) << j << '\n';
 
     arquivo_saida.close();
-
 }
 
-void Tarefa::criar(string user){
+void Tarefa::criar(string user)
+{
 
     string temp;
 
@@ -114,7 +122,7 @@ void Tarefa::criar(string user){
 
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cin.clear();
- 
+
     this->setUsuario(user);
 
     cout << "Título: ";
@@ -124,7 +132,7 @@ void Tarefa::criar(string user){
     cout << "Categoria: ";
     getline(cin, temp);
     this->setCategoria(temp);
-    
+
     cout << "Atribuída por: ";
     getline(cin, temp);
     this->setAtribuidaPor(temp);
@@ -155,11 +163,11 @@ void Tarefa::criar(string user){
 
     cout << "Data de início: ";
     getline(cin, temp);
-   
-    while(!checarFormatoData(temp)){
+
+    while (!checarFormatoData(temp))
+    {
         cout << "Formato de data inválido! Tente inserir algo como D/M/A." << endl;
         getline(cin, temp);
-        
     }
 
     this->setDataInicio(temp);
@@ -167,13 +175,11 @@ void Tarefa::criar(string user){
     cout << "Data de entrega: ";
     getline(cin, temp);
 
-    while(!checarFormatoData(temp)){
+    while (!checarFormatoData(temp))
+    {
         cout << "Formato de data inválido! Tente inserir algo como D/M/A." << endl;
         getline(cin, temp);
-        
     }
 
     this->setDataFim(temp);
-
-    
 }

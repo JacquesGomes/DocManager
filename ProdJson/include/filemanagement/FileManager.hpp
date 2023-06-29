@@ -1,24 +1,9 @@
-/*#ifndef FILEMANAGER_HPP
+#ifndef FILEMANAGER_HPP
 #define FILEMANAGER_HPP
-#include <nlohmann/json.hpp>
-#include <iostream>
-#include <string>
-
 
 class FileManager{
     public:
-        FileManager();
-        ~FileManager();
-
-        bool criarPasta(string caminho);
-        bool deletarPasta(string caminho);
-
-        bool deletarArquivo(string caminho);
-        bool criarArquivo(string caminho);
-
-        nlohmann::json lerArquivoJson(string caminho);
-        nlohmann::json escreverArquivoJson(string caminho, nlohmann::json conteudo);
-
+        bool criarDiretorio(string nome, string username);
 };
 
-#endif*/
+#endif

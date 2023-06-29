@@ -3,6 +3,7 @@
 #include <string>
 #include <unistd.h>
 #include <fstream>
+#include <limits>
 
 using namespace std;
 
@@ -12,47 +13,33 @@ void Menu::imprimirMenuTasks(string user){
 
     while(choice != 0){
 
-    cout << "\n1 - Criar arquivo\n2 - Imprimir conteúdo\n0 - Sair\n";
+    cout << "\n1 - Criar arquivo\n2 - Imprimir conteúdo\n3 - Listar arquivos\n0 - Sair\n";
 
     cout << "\nDigite a opção desejada: ";
     cin >> choice;
 
     if(choice == 1){
+
         Tarefa tarefinha;
         tarefinha.criar(user);
         string nome = tarefinha.getTitulo();
-        tarefinha.imprimirConteudo(nome);
+        tarefinha.imprimirConteudo(nome, user);
+
     }
+
     else if(choice == 2){
+
         string nome;
         cout << "Insira o nome do arquivo: ";
+        cin >> nome;
 
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cin.clear();
-        getline(cin, nome);
-
-        char currentDir[FILENAME_MAX];
-        getcwd(currentDir, sizeof(currentDir));
-        string path = currentDir;
-        path = path + "/data/tasks/" + nome + ".json";
-  
-        ifstream file(path);
-
-        if(!file){
-            cout << "\nErro ao abrir o arquivo!";
-        }
-        else{
-            cout << "\nConteúdo do arquivo `" << nome << "` :\n";
-        }
+        FileManager manager;
+        manager.criarDiretorio(nome, user);
         
-        string linha;
+    }
 
-        while(getline(file, linha)){
-            cout << linha << endl;
-        }
+    else if(choice == 3){
 
-        file.close();
-        
     }
 
     else if(choice == 0){
