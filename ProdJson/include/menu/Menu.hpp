@@ -5,6 +5,7 @@
 #include "../authentication/UserAuthentication.hpp"
 #include "../filemanagement/FileManager.hpp"
 #include "../file/TaskFile.hpp"
+#include "../sorting/ListaEnc.hpp"
 
 
 class Menu{

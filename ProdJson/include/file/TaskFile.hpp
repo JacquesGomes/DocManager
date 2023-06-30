@@ -1,5 +1,12 @@
+#ifndef TASKFILE_HPP
+#define TASKFILE_HPP
+
 #include <string>
 #include "File.hpp"
+#include <nlohmann/json.hpp>
+
+
+using json = nlohmann::json;
 
 using namespace std;
 
@@ -47,5 +54,9 @@ public:
     //void remover() override;
     void criar(string user) override;
 
+    void salvarTaskLida(json jsonData);
 
 };
+
+
+#endif

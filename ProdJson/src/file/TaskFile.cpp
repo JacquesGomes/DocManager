@@ -4,7 +4,6 @@
 #include <string>
 #include <unistd.h>
 #include <fstream>
-#include "../../include/filemanagement/FileManager.hpp"
 
 using namespace std;
 
@@ -179,4 +178,21 @@ void Tarefa::criar(string user)
     }
 
     this->setDataFim(temp);
+}
+
+void Tarefa::salvarTaskLida(json j){
+
+    this->setUsuario(j["Usuário:"]);
+    this->setTitulo(j["Título:"]);
+    this->setDataInicio(j["DataCriação:"]);
+    this->setCategoria(j["Categoria:"]);
+    this->atribuidaPor = j["AtribuidaPor:"];
+    this->responsavel = j["Responsável:"];
+    this->assunto = j["Assunto:"];
+    this->descricao = j["Descrição:"];
+    this->notas = j["Notas:"];
+    this->status = j["Status:"];
+    this->prioridade = j["Prioridade:"];
+    this->dataFim = j["PrazoFinal:"];
+
 }

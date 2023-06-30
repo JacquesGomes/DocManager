@@ -1,15 +1,36 @@
 #ifndef LISTAENCNODE_HPP
 #define LISTAENCNODE_HPP
-#include "JsonStruct.hpp"
+#include "../file/File.hpp"
+#include "../file/TaskFile.hpp"
 #include <string>
+#include <nlohmann/json.hpp>
 
 using namespace std;
+using json = nlohmann::json;
 
 class ListaEncNode{
-    public:
-        JsonStruct data;
+    private:
+        Tarefa data;
         ListaEncNode* next;
+    public:
+        ListaEncNode(){}
 
-        ListaEncNode(JsonStruct data) : data(data), next(nullptr) {}
+        ListaEncNode(Tarefa data){
+            this->data = data;
+            this->next = NULL;
+
+        } 
+        
+        void setData(Tarefa data);
+
+        void setNext(ListaEncNode* node){
+            this->next = node;
+        };
+
+        ListaEncNode* getNext(){
+            return this->next;
+        }
+
+        void imprimirData();
 };
 #endif

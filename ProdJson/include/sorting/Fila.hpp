@@ -1,4 +1,4 @@
-#include "ListaEnc.hpp"
+/*#include "ListaEnc.hpp"
 #include <vector>
 using namespace std;
 
@@ -9,7 +9,7 @@ class Fila{
     public:
         Fila(){}
 
-        void insert_fila(JsonStruct data){
+        void insert_fila(Tarefa data){
             lista.append(data);
         }
 
@@ -19,4 +19,4 @@ class Fila{
 
         
 
-};
+};*/

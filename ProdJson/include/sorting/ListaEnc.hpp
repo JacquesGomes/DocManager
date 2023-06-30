@@ -1,6 +1,7 @@
 #ifndef LISTAENC_HPP
 #define LISTAENC_HPP
-#include <ListaEncNode.hpp>
+#include "ListaEncNode.hpp"
+
 
 using namespace std;
 
@@ -14,17 +15,19 @@ class ListaEnc{
 
         ListaEnc() : head(nullptr), tail(nullptr){}
 
-        void append(JsonStruct data){
+        void append(Tarefa data){
             ListaEncNode* newNode = new ListaEncNode(data);
             if(head == nullptr){
                 head = newNode;
                 tail = newNode;
             }
             else{
-                tail->next = newNode;
+                tail->setNext(newNode);
                 tail = newNode;
             }
         }
+
+        void imprimirLista();
 
 };
 #endif
