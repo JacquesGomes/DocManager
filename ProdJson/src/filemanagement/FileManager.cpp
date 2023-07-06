@@ -127,3 +127,47 @@ void FileManager::carregarArquivosFila(string user, Fila* &fila){
         }
     }
 }
+
+
+
+void FileManager::carregarArquivosVector(string user, vector<Tarefa>& tarefas){
+    
+    char currentDir[FILENAME_MAX];
+    getcwd(currentDir, sizeof(currentDir));
+    string path = currentDir;
+    path = path + "/data/tasks/" + user;
+
+    for (auto& entry : filesystem::directory_iterator(path)) {
+        if (entry.is_regular_file() && entry.path().extension() == ".json") {
+            std::ifstream file(entry.path()); // Abrir o arquivo JSON
+            if (file.is_open()) {
+                nlohmann::json jsonData;
+                file >> jsonData; // Ler o conteúdo do arquivo JSON
+                file.close(); // Fechar o arquivo
+
+                Tarefa item;
+                item.salvarTaskLida(jsonData);
+                
+                tarefas.push_back(item);
+            } else {
+                cout << "Erro ao abrir o arquivo: " << entry.path().filename().string() << endl;
+                 // Retorna false em caso de erro ao abrir o arquivo
+            }
+        }
+    }
+}
+
+
+void FileManager::salvarNomesVector(string username, vector<string> &arr){
+
+    char currentDir[FILENAME_MAX];
+    getcwd(currentDir, sizeof(currentDir));
+    string path = currentDir;
+    path = path + "/data/tasks/" + username;
+
+    for (auto& entry : filesystem::directory_iterator(path)) {
+        if (entry.is_regular_file()) {
+            arr.push_back(entry.path().filename().string());
+        }
+    }
+}

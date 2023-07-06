@@ -10,7 +10,6 @@ class User{
         string nome;
         string data;
 
-    
 };
 
 

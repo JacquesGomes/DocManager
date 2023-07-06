@@ -80,11 +80,7 @@ void Tarefa::setPontuacaoPrioridade(int prioridade){
     this->pontuacaoPrioridade = prioridade;
 }
 
-int Tarefa::getPontuacaoPrioridade(){
-    return this->pontuacaoPrioridade;
-}
-
-/*============Methods===========*/
+/*============ Métodos ===========*/
 
 int Tarefa::calcularPontuacaoPrioridade(string prioridade){
     int soma = 0;

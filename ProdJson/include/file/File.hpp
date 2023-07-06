@@ -13,13 +13,9 @@ class File{
         string categoria;
 
     public:
-        //File(string caminhoArquivo, string usuario, string titulo, string dataInicio, string categoria) : caminhoArquivo(caminhoArquivo), usuario(usuario), titulo(titulo), dataInicio(dataInicio), categoria(categoria){};
 
         File(){};
 
-        /*virtual ~File() = 0;
-        virtual void criar() = 0;
-        virtual void remover() = 0;*/
         virtual void salvarTask(string fileName, string username) = 0;
 
         virtual void criar(string user) = 0;
