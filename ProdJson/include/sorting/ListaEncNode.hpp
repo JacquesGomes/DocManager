@@ -11,17 +11,28 @@ using json = nlohmann::json;
 class ListaEncNode{
     private:
         Tarefa data;
-        ListaEncNode* next;
+        ListaEncNode* next = nullptr;
+        int pontuacaoPrioridade;
+
     public:
         ListaEncNode(){}
 
         ListaEncNode(Tarefa data){
             this->data = data;
-            this->next = NULL;
+            this->pontuacaoPrioridade = data.getPontuacaoPrioridade();
+            this->next = nullptr;
 
         } 
         
         void setData(Tarefa data);
+
+        void setPontuacaoPrioridade(int pontuacao){
+            this->pontuacaoPrioridade = pontuacao;
+        }
+
+        int getPontuacaoPrioridadeNode(){
+            return this->pontuacaoPrioridade;
+        }
 
         void setNext(ListaEncNode* node){
             this->next = node;

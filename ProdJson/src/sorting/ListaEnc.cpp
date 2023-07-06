@@ -5,7 +5,7 @@ using namespace std;
 void ListaEnc::imprimirLista(){
     while(this->head != nullptr){
         this->head->imprimirData();
-        head = this->head->getNext();
+        this->head = this->head->getNext();
     }
 
 }

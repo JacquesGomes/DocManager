@@ -18,5 +18,6 @@ void ListaEncNode::imprimirData(){
     cout <<  "Status: " << this->data.getStatus() << "\n";
     cout <<  "Prioridade: " << this->data.getPrioridade() << "\n";
     cout <<  "Prazo final: " << this->data.getDataFim() << "\n";
+    cout << "Pontuação de prioridade: " << this->data.getPontuacaoPrioridade() << "\n";
 
     }

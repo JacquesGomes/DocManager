@@ -21,6 +21,7 @@ private:
     string status;
     string prioridade;
     string dataFim;
+    int pontuacaoPrioridade;
 
 public:
     
@@ -50,11 +51,21 @@ public:
     string getDataFim();
     void setDataFim(string dataFim);
 
+    void setPontuacaoPrioridade(int pontuacao);
+
+    int getPontuacaoPrioridade(){
+        return this->pontuacaoPrioridade;
+    }
+
+
     void salvarTask(string fileName, string username) override;
     //void remover() override;
     void criar(string user) override;
 
     void salvarTaskLida(json jsonData);
+
+    int calcularPontuacaoPrioridade(string prioridade);
+
 
 };
 

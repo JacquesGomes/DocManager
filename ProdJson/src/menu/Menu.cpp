@@ -13,7 +13,7 @@ void Menu::imprimirMenuTasks(string user){
 
     while(choice != 0){
 
-    cout << "\n1 - Criar arquivo\n2 - Imprimir arquivo\n3 - Listar arquivos\n4 - Imprimir o conteúdo de todos os arquivos\n0 - Sair\n";
+    cout << "\n1 - Criar arquivo\n2 - Imprimir arquivo\n3 - Listar arquivos\n4 - Imprimir o conteúdo de todos os arquivos\n5 - Imprimir o conteúdo de todos os arquivos de acordo com a prioridade\n0 - Sair\n";
 
     cout << "\nDigite a opção desejada: ";
     cin >> choice;
@@ -54,13 +54,24 @@ void Menu::imprimirMenuTasks(string user){
 
     else if(choice == 4){
         ListaEnc* lista = new ListaEnc();
-        FileManager manager;
-        lista = manager.carregarArquivosUser(user);
+        FileManager managers;
+        managers.carregarArquivosUser(user, lista);
         lista->imprimirLista();
+        delete lista;
+    }
+
+    else if(choice == 5){
+        Fila* fila = new Fila();
+        FileManager manager;
+        manager.carregarArquivosFila(user, fila);
+        fila->imprimirFila();
+        delete fila;
+
     }
 
     else if(choice == 0){
         cout << "\nBem vindo de volta ao menu inicial!\n";
+        
     }
 
     else{

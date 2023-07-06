@@ -6,6 +6,8 @@
 #include "../filemanagement/FileManager.hpp"
 #include "../file/TaskFile.hpp"
 #include "../sorting/ListaEnc.hpp"
+#include "../sorting/Fila.hpp"
+
 
 
 class Menu{

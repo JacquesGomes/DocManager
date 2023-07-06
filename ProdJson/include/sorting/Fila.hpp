@@ -1,22 +1,53 @@
-/*#include "ListaEnc.hpp"
+#ifndef FILA_HPP
+#define FILA_HPP
+
+#include "ListaEnc.hpp"
+#include "ListaEncNode.hpp"
 #include <vector>
 using namespace std;
 
 class Fila{
     private:
-        ListaEnc lista;
+        ListaEncNode* head;
+        ListaEncNode* tail;
     
     public:
-        Fila(){}
+        Fila() : head(nullptr), tail(nullptr){}
+         
 
-        void insert_fila(Tarefa data){
-            lista.append(data);
+        void inserir(Tarefa tarefa){
+            ListaEncNode* node = new ListaEncNode(tarefa);
+
+            if(head == nullptr){
+                this->head = node;
+                this->tail = node;
+            } 
+            else if(node->getPontuacaoPrioridadeNode() <= head->getPontuacaoPrioridadeNode()){
+
+                node->setNext(head);                
+                this->head = node;
+            }
+
+            else{
+            ListaEncNode* current = head;
+            while (current->getNext() != nullptr && node->getPontuacaoPrioridadeNode() >= current->getNext()->getPontuacaoPrioridadeNode()) {
+                current = current->getNext();
+            }
+            node->setNext(current->getNext());
+            current->setNext(node);
+            if (current == tail) {
+                tail = node;
+            }
+            }
+    }
+
+    void imprimirFila() {
+        ListaEncNode* current = this->head;
+        while (current != nullptr) {
+            current->imprimirData();
+            current = current->getNext();
         }
+    }
+};
 
-        Fila mergeSort(Fila fila);
-
-        Fila lerJsonFile(vector<string> filenames);
-
-        
-
-};*/
+#endif

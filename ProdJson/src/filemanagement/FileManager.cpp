@@ -15,17 +15,15 @@ bool FileManager::criarDiretorio(string user){
     getcwd(currentDir, sizeof(currentDir));
     string path = currentDir;
     path = path + "/data/tasks/" + user;
-    //path = path + "/" + "teste";
-    cout << path << endl;
 
         // Check if directory exists and create it if it doesn't
     if (!filesystem::exists(path) || !filesystem::is_directory(path)) {
         if (filesystem::create_directory(path)) {
-            cout << "Directory created successfully." << endl;
+            cout << "Diretório criado com sucesso!" << endl;
             return true;
         } else {
-            cout << "Failed to create directory." << endl;
-            return false;  // Return empty string on failure
+            cout << "Erro ao criar o diretório." << endl;
+            return false;  
         }
     }
 
@@ -76,8 +74,7 @@ void FileManager::imprimirArquivosUser(string username){
     }
 }
 
-ListaEnc* FileManager::carregarArquivosUser(string user){
-    ListaEnc* lista = new ListaEnc();
+void FileManager::carregarArquivosUser(string user, ListaEnc* &lista){
     
     char currentDir[FILENAME_MAX];
     getcwd(currentDir, sizeof(currentDir));
@@ -102,7 +99,31 @@ ListaEnc* FileManager::carregarArquivosUser(string user){
             }
         }
     }
+}
 
+void FileManager::carregarArquivosFila(string user, Fila* &fila){
+    
+    char currentDir[FILENAME_MAX];
+    getcwd(currentDir, sizeof(currentDir));
+    string path = currentDir;
+    path = path + "/data/tasks/" + user;
 
-    return lista;
+    for (auto& entry : filesystem::directory_iterator(path)) {
+        if (entry.is_regular_file() && entry.path().extension() == ".json") {
+            std::ifstream file(entry.path()); // Abrir o arquivo JSON
+            if (file.is_open()) {
+                nlohmann::json jsonData;
+                file >> jsonData; // Ler o conteúdo do arquivo JSON
+                file.close(); // Fechar o arquivo
+
+                Tarefa item;
+                item.salvarTaskLida(jsonData);
+                
+                fila->inserir(item);
+            } else {
+                cout << "Erro ao abrir o arquivo: " << entry.path().filename().string() << endl;
+                 // Retorna false em caso de erro ao abrir o arquivo
+            }
+        }
+    }
 }

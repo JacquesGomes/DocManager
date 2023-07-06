@@ -2,6 +2,7 @@
 #define FILEMANAGER_HPP
 
 #include "../sorting/ListaEnc.hpp"
+#include "../sorting/Fila.hpp"
 
 #include <string>
 #include <filesystem>
@@ -12,7 +13,8 @@ class FileManager{
         bool criarDiretorio(string username);
         bool imprimirArquivo(string nome, string username);
         void imprimirArquivosUser(string username);
-        ListaEnc* carregarArquivosUser(string username);
+        void carregarArquivosUser(string username, ListaEnc* &lista);
+        void carregarArquivosFila(string username, Fila* &lista);
 };
 
 #endif

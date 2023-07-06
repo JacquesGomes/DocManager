@@ -4,6 +4,9 @@
 #include <string>
 #include <unistd.h>
 #include <fstream>
+#include <chrono>
+#include <ctime>
+#include <sstream>
 
 using namespace std;
 
@@ -73,9 +76,43 @@ void Tarefa::setDataFim(string dataFim)
 {
     this->dataFim = dataFim;
 }
+void Tarefa::setPontuacaoPrioridade(int prioridade){
+    this->pontuacaoPrioridade = prioridade;
+}
 
+int Tarefa::getPontuacaoPrioridade(){
+    return this->pontuacaoPrioridade;
+}
 
 /*============Methods===========*/
+
+int Tarefa::calcularPontuacaoPrioridade(string prioridade){
+    int soma = 0;
+    if(prioridade == "muito baixa"){
+        soma += 30;
+    }
+    else if(prioridade == "baixa"){
+        soma += 20;
+    }
+    else if(prioridade == "média"){
+        soma += 15;
+    }
+    else if(prioridade == "grande"){
+        soma += 10;
+    }
+    else if(prioridade == "muito grande"){
+        soma += 5;
+    }
+    else if(prioridade == "urgente"){
+        soma += 0;
+    }
+    else{
+        soma += 30;
+    }
+
+    return soma;
+
+}
 
 void Tarefa::salvarTask(string nome, string user)
 {
@@ -103,6 +140,7 @@ void Tarefa::salvarTask(string nome, string user)
     j["Status:"] = this->status;
     j["Prioridade:"] = this->prioridade;
     j["PrazoFinal:"] = this->dataFim;
+    j["PontuacaoPrioridade:"] = this->pontuacaoPrioridade;
 
     arquivo_saida << setw(2) << j << '\n';
 
@@ -152,8 +190,8 @@ void Tarefa::criar(string user)
     cout << "Status: ";
     getline(cin, temp);
     this->setStatus(temp);
-
-    cout << "Prioridade: ";
+    
+    cout << "Prioridade(Digite: muito baixa; baixa; média; grande; muito grande; urgente): ";
     getline(cin, temp);
     this->setPrioridade(temp);
 
@@ -178,6 +216,11 @@ void Tarefa::criar(string user)
     }
 
     this->setDataFim(temp);
+
+
+    string prio = this->getPrioridade();
+    long int tempint = calcularPontuacaoPrioridade(prio);
+    this->setPontuacaoPrioridade(tempint);
 }
 
 void Tarefa::salvarTaskLida(json j){
@@ -194,5 +237,6 @@ void Tarefa::salvarTaskLida(json j){
     this->status = j["Status:"];
     this->prioridade = j["Prioridade:"];
     this->dataFim = j["PrazoFinal:"];
+    this->pontuacaoPrioridade = j["PontuacaoPrioridade:"];
 
 }

@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include "../../include/filemanagement/FileManager.hpp"
 
 using namespace std;
 
@@ -29,6 +30,9 @@ void UserAuthentication::criarUsuario(string username, string password){
     ofstream file("data/password.txt", ios::app);
     file << username << ":" << password << "\n";
     file.close();
+
+    FileManager manager;
+    manager.criarDiretorio(username);
 
 }
 
