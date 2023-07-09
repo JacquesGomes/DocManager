@@ -5,6 +5,13 @@ Gerenciador de tarefas em C++! Esse aplicativo possui uma tela inicial de login,
 
 <!---Adicionar fotos dos menus aqui ---->
 
+<p align="center">
+<img src="ProdJson/docs/inicial.png" alt="Diagrama de classes">
+<img src="ProdJson/docs/tasks.png" alt="Diagrama de classes">
+
+</p>
+
+
 # Diagrama de classes
 <p align="center">
 <img src="ProdJson/docs/classes.jpg" alt="Diagrama de classes">
