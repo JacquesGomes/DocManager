@@ -9,7 +9,7 @@ Por sua vez, o menu de tarefas permite a criação de tarefas, impressão de tar
 
 <p align="center">
 <img src="ProdJson/docs/inicial.png" alt="Diagrama de classes">
-<img src="ProdJson/docs/tasks.png" width="400px" height="300px" alt="Diagrama de classes">
+<img src="ProdJson/docs/tasks.png" alt="Diagrama de classes">
 
 </p>
 
