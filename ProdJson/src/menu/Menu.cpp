@@ -115,7 +115,7 @@ void Menu::imprimirMenuTasks(string user)
     while (choice != 0)
     {
         cout << "\n<========= Menu de Tarefas =========>\n";
-        cout << "\n1 - Criar arquivo\n2 - Imprimir arquivo\n3 - Listar arquivos\n4 - Imprimir o conteúdo de todos os arquivos\n5 - Imprimir o conteúdo de todos os arquivos de acordo com a prioridade\n6 - Fazer busca binárias\n7 - Ordenar nomes com BubbleSort\n8 - Ordenar nomes com MergeSort\n0 - Sair\n";
+        cout << "\n1 - Criar arquivo\n2 - Imprimir arquivo pelo nome\n3 - Listar arquivos\n4 - Imprimir o conteúdo de todos os arquivos\n5 - Imprimir o conteúdo de todos os arquivos de acordo com a prioridade\n6 - Pesquisar arquivo por pontuação de prioridade\n7 - Ordenar nomes com BubbleSort\n8 - Ordenar nomes com MergeSort\n0 - Sair\n";
 
         cout << "\nDigite a opção desejada: ";
         cin >> choice;
