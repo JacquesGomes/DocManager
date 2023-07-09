@@ -7,7 +7,7 @@ Gerenciador de tarefas em C++! Esse aplicativo possui uma tela inicial de login,
 
 # Diagrama de classes
 <p align="center">
-<img src="ProdJson/docs/classes.jpeg" alt="Diagrama de classes">
+<img src="ProdJson/docs/classes.jpg" alt="Diagrama de classes">
 </p>
 
 # Estrutura de pastas do projeto
