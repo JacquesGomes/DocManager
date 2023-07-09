@@ -31,19 +31,19 @@ Gerenciador de tarefas em C++! Esse aplicativo possui uma tela inicial de login,
 
 Exemplo TaskFile:
 
-{
-  "caminhoArquivo": "caminho/do/arquivo",
-  "usuario": "Terminal Root",
-  "titulo": "Marcos Oliveira",
-  "dataInicio": "2023-06-09",
-  "categoria": "Tarefa",
-  "atribuidaPor": "João Silva",
-  "responsavel": "Marcos Oliveira",
-  "assunto": "Implementação do recurso XYZ",
-  "descricao": "Detalhes da tarefa a ser realizada",\
-  "notas": "Notas adicionais sobre a tarefa",
-  "status": "Em andamento",
-  "prioridade": "Alta",
-  "dataFim": "03/02/2024"
-  "pontuacaoPrioridade": 10; 
-}
+{<br>
+  "caminhoArquivo": "caminho/do/arquivo",<br>
+  "usuario": "Terminal Root",<br>
+  "titulo": "Marcos Oliveira",<br>
+  "dataInicio": "2023-06-09",<br>
+  "categoria": "Tarefa",<br>
+  "atribuidaPor": "João Silva",<br>
+  "responsavel": "Marcos Oliveira",<br>
+  "assunto": "Implementação do recurso XYZ",<br>
+  "descricao": "Detalhes da tarefa a ser realizada",<br>
+  "notas": "Notas adicionais sobre a tarefa",<br>
+  "status": "Em andamento",<br>
+  "prioridade": "Alta",<br>
+  "dataFim": "03/02/2024",<br>
+  "pontuacaoPrioridade": 10;<br>
+}<br>
