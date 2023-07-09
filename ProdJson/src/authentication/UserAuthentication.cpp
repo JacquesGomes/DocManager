@@ -7,8 +7,10 @@
 using namespace std;
 
 bool UserAuthentication::login(string usuario, string password){
+    
+    this->username = usuario;
+    
     ifstream file("data/password.txt");
-
     string line;
 
     while(getline(file, line)){
@@ -27,6 +29,7 @@ bool UserAuthentication::login(string usuario, string password){
 }
 
 void UserAuthentication::criarUsuario(string username, string password){
+    this->username = username;
     ofstream file("data/password.txt", ios::app);
     file << username << ":" << password << "\n";
     file.close();

@@ -6,8 +6,12 @@
 using namespace std;
 
 class UserAuthentication{
-    public:
 
+    private:
+        string username;
+
+    public:
+        UserAuthentication(){};
         bool login(string username, string password);
         void criarUsuario(string username, string password);
 };

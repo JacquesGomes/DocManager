@@ -22,7 +22,10 @@ project/ <br>
 │   ├── menu/ <br>
 │   │   └── Menu.cpp <br>
 │   ├── sorting/ <br>
-│   │   └── Sorting.cpp <br>
+│   │   ├── ListaEnc.cpp <br>
+│   │   ├── ListaEncNode.cpp <br>
+│   │   ├── BuscaBinaria.cpp <br>
+│   │   └── Fila.cpp <br>
 │   ├── file/ <br>
 │   │   └── TaskFile.cpp <br>
 │   └── main.cpp <br>
@@ -34,7 +37,10 @@ project/ <br>
 │   ├── menu/ <br>
 │   │   └── Menu.hpp <br>
 │   ├── sorting/ <br>
-│   │   └── Sorting.hpp <br>
+│   │   ├── ListaEnc.hpp <br>
+│   │   ├── ListaEncNode.hpp <br>
+│   │   ├── BuscaBinaria.hpp <br>
+│   │   └── Fila.hpp <br>
 │   └── file/ <br>
 │       ├── File.hpp <br>
 │       └── TaskFile.hpp <br>
