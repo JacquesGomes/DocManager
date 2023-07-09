@@ -19,47 +19,14 @@ Gerenciador de tarefas em C++! Esse aplicativo possui uma tela inicial de login,
 
 ## Estrutura de pastas do projeto
 
-<br>
-project/ <br>
-├── src/ <br>
-│   ├── authentication/ <br>
-│   │   └── UserAuthentication.cpp <br>
-│   ├── filemanagement/ <br>
-│   │   └──  FileManager.cpp <br>
-│   ├── menu/ <br>
-│   │   └── Menu.cpp <br>
-│   ├── sorting/ <br>
-│   │   ├── ListaEnc.cpp <br>
-│   │   ├── ListaEncNode.cpp <br>
-│   │   ├── BuscaBinaria.cpp <br>
-│   │   └── Fila.cpp <br>
-│   ├── file/ <br>
-│   │   └── TaskFile.cpp <br>
-│   └── main.cpp <br>
-├── include/ <br>
-│   ├── authentication/ <br>
-│   │   └── UserAuthentication.hpp <br>
-│   ├── filemanagement/ <br>
-│   │   └── FileManager.hpp <br>
-│   ├── menu/ <br>
-│   │   └── Menu.hpp <br>
-│   ├── sorting/ <br>
-│   │   ├── ListaEnc.hpp <br>
-│   │   ├── ListaEncNode.hpp <br>
-│   │   ├── BuscaBinaria.hpp <br>
-│   │   └── Fila.hpp <br>
-│   └── file/ <br>
-│       ├── File.hpp <br>
-│       └── TaskFile.hpp <br>
-├── bin/ <br>
-├── data/ <br>
-│   ├── users.txt <br>
-│   ├── usuario1/ <br>
-│   ├── usuario2/ <br>
-│   └── usuario.../ <br>
-├── docs/ <br>
-│   └── README.md <br>
-└── makefile
+<ul>
+<li>/bin: </li>
+<li>/bin: </li>
+<li>/bin: </li>
+<li>/bin: </li>
+<li>/bin: </li>
+
+</ul>
 
 
 Exemplo TaskFile:
