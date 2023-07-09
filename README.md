@@ -5,6 +5,11 @@ Gerenciador de tarefas em C++! Esse aplicativo possui uma tela inicial de login,
 
 <!---Adicionar fotos dos menus aqui ---->
 
+# Diagram de classes
+<p align="center">
+<img src="/docs/classes.jpeg" alt="Diagrama de classes">
+</p>
+
 # Estrutura de pastas do projeto
 
 <br>
