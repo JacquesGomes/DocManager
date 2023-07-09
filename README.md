@@ -20,11 +20,11 @@ Gerenciador de tarefas em C++! Esse aplicativo possui uma tela inicial de login,
 ## Estrutura de pastas do projeto
 
 <ul>
-<li>/bin: </li>
-<li>/bin: </li>
-<li>/bin: </li>
-<li>/bin: </li>
-<li>/bin: </li>
+<li>/src: Código fonte (.cpp). </li>
+<li>/include: Cabeçalhos contendo a assinatura das classes/funções (.hpp). </li>
+<li>/docs: Documentação do projeto, incluindo as imagens. </li>
+<li>/data: Arquivos em json com o conteúdo das tarefas criadas pelos usuários. </li>
+<li>makefile: diretrizes para a compilação.</li>
 
 </ul>
 
