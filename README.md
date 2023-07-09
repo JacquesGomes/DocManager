@@ -12,12 +12,12 @@ Gerenciador de tarefas em C++! Esse aplicativo possui uma tela inicial de login,
 </p>
 
 
-# Diagrama de classes
+## Diagrama de classes
 <p align="center">
 <img src="ProdJson/docs/classes.jpg" alt="Diagrama de classes">
 </p>
 
-# Estrutura de pastas do projeto
+## Estrutura de pastas do projeto
 
 <br>
 project/ <br>
