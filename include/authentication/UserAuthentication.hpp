@@ -7,9 +7,6 @@ using namespace std;
 
 class UserAuthentication{
 
-    private:
-        string username;
-
     public:
         UserAuthentication(){};
         bool login(string username, string password);

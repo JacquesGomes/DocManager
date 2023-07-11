@@ -183,11 +183,14 @@ void Menu::imprimirMenuTasks(string user)
             managersVector.carregarArquivosVector(user, tarefasV);
             sort(tarefasV.begin(), tarefasV.end(), comparaTarefas);
             BuscaBinaria busca(tarefasV);
-            int valor = 10;
+            int valor;
+            cout << "Insira o valor de prioridade que quer procurar: ";
+            cin >> valor;
             bool encontrado = busca.buscaRecursiva(valor, 0, tarefasV.size() - 1);
             bool encontrado2 = busca.buscaIterativa(valor);
-
-            cout << encontrado << " " << encontrado2 << endl;
+            if(!encontrado && !encontrado2){
+                cout << "Valor não encontrado!\n";
+            }
         }
 
         else if (choice == 7)

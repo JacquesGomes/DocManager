@@ -44,7 +44,8 @@ bool FileManager::imprimirArquivo(string nome, string user){
         ifstream file(path);
 
         if(!file){
-            cout << "\nErro ao abrir o arquivo!";
+            cout << "\nErro ao abrir o arquivo! Certifique-se de inserir um nome válido." << endl;
+            return false;
         }
         else{
             cout << "\nConteúdo do arquivo `" << nome << "` :\n";

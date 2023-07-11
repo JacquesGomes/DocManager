@@ -24,7 +24,7 @@ class BuscaBinaria{
             int meio = (inicio + fim) / 2;
 
             if(tarefa[meio].getPontuacaoPrioridade() == valor){
-                cout << "Valor encontrado em: " << tarefa[meio].getTitulo() << endl;
+                cout << "Valor encontrado pela Busca Binária Recursiva em: " << tarefa[meio].getTitulo() << ".json" << endl;
                 return true;
             } else if(tarefa[meio].getPontuacaoPrioridade() < valor){
                 return buscaRecursiva(valor, meio + 1, fim);
@@ -43,7 +43,7 @@ class BuscaBinaria{
                 int meio = (inicio + fim) / 2;
 
                 if(tarefa[meio].getPontuacaoPrioridade() == valor){
-                    cout << "Valor encontrado em: " << tarefa[meio].getTitulo() << endl;
+                    cout << "Valor encontrado pela Busca Binária Iterativa em: " << tarefa[meio].getTitulo() << ".json"  << endl;
                     return true;
                 } else if(tarefa[meio].getPontuacaoPrioridade() < valor){
                     inicio = meio + 1;
