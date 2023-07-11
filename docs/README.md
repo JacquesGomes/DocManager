@@ -8,8 +8,8 @@ Por sua vez, o menu de tarefas permite a criação de tarefas, impressão de tar
 <!---Adicionar fotos dos menus aqui ---->
 
 <p align="center">
-<img src="ProdJson/docs/inicial.png" alt="Diagrama de classes">
-<img src="ProdJson/docs/tasks.png" alt="Diagrama de classes">
+<img src="./inicial.png" alt="Diagrama de classes">
+<img src="./tasks.png" alt="Diagrama de classes">
 
 </p>
 
