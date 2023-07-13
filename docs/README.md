@@ -35,7 +35,7 @@ Por sua vez, o menu de tarefas permite a criação de tarefas, impressão de tar
 
 ## Diagrama de classes
 <p align="center">
-<img src="./classes.jpg" alt="Diagrama de classes">
+<img src="./classes.png" alt="Diagrama de classes">
 </p>
 
 ## Estrutura de pastas do projeto
