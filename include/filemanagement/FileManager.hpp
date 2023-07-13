@@ -1,3 +1,8 @@
+/**
+ * @file FileManager.hpp
+ * @brief Assinatura da classe que gerencia os arquivos e interage com diretórios
+*/
+
 #ifndef FILEMANAGER_HPP
 #define FILEMANAGER_HPP
 

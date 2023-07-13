@@ -1,3 +1,8 @@
+/**
+ * @file ListaEnc.hpp
+ * @brief Assinaturas da classe que representa uma lista encadeada
+*/
+
 #ifndef LISTAENC_HPP
 #define LISTAENC_HPP
 #include "ListaEncNode.hpp"

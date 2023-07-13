@@ -1,3 +1,8 @@
+/**
+ * @file File.hpp
+ * @brief Assinatura da classe abstrata que serve de base para todos os arquivos que são gerenciados pelo programa
+*/
+
 #ifndef FILE_HPP
 #define FILE_HPP
 #include <string>

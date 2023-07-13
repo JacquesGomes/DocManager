@@ -1,5 +1,7 @@
 *.txt
 *.o
 
+docs/Doxydocs
+
 myprogram
 *.json

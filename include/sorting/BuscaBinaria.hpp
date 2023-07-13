@@ -1,3 +1,8 @@
+/**
+ * @file BuscaBinaria.hpp
+ * @brief Assinatura da classe que implementa a busca binária recursiva e iterativa
+*/
+
 #ifndef BUSCABINARIA_HPP
 #define BUSCABINARIA_HPP
 #include "../file/TaskFile.hpp"

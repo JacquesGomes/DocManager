@@ -1,3 +1,8 @@
+/**
+ * @file Fila.hpp
+ * @brief Assinaturas da classe que representa uma fila 
+*/
+
 #ifndef FILA_HPP
 #define FILA_HPP
 

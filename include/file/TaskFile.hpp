@@ -1,3 +1,8 @@
+/**
+ * @file TaskFile.hpp
+ * @brief Assinatura da classe que representa uma tarefa
+*/
+
 #ifndef TASKFILE_HPP
 #define TASKFILE_HPP
 

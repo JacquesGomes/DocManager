@@ -1,3 +1,8 @@
+/**
+ * @file Menu.hpp
+ * @brief Assinatura da classe que gerencia os menus do programa
+*/
+
 #ifndef MENU_HPP
 #define MENU_HPP
 

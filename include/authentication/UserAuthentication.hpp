@@ -1,3 +1,8 @@
+/**
+ * @file UserAuthentication.hpp
+ * @brief Assinatura da classe de autenticação e gerenciamento do usuário
+*/
+
 #ifndef USERAUTHENTICATION_HPP
 #define USERAUTHENTICATION_HPP
 
