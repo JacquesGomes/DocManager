@@ -84,7 +84,7 @@ void FileManager::carregarArquivosUser(string user, ListaEnc* &lista){
 
     for (auto& entry : filesystem::directory_iterator(path)) {
         if (entry.is_regular_file() && entry.path().extension() == ".json") {
-            std::ifstream file(entry.path()); // Abrir o arquivo JSON
+            ifstream file(entry.path()); // Abrir o arquivo JSON
             if (file.is_open()) {
                 nlohmann::json jsonData;
                 file >> jsonData; // Ler o conteúdo do arquivo JSON
@@ -111,7 +111,7 @@ void FileManager::carregarArquivosFila(string user, Fila* &fila){
 
     for (auto& entry : filesystem::directory_iterator(path)) {
         if (entry.is_regular_file() && entry.path().extension() == ".json") {
-            std::ifstream file(entry.path()); // Abrir o arquivo JSON
+            ifstream file(entry.path()); // Abrir o arquivo JSON
             if (file.is_open()) {
                 nlohmann::json jsonData;
                 file >> jsonData; // Ler o conteúdo do arquivo JSON
@@ -140,7 +140,7 @@ void FileManager::carregarArquivosVector(string user, vector<Tarefa>& tarefas){
 
     for (auto& entry : filesystem::directory_iterator(path)) {
         if (entry.is_regular_file() && entry.path().extension() == ".json") {
-            std::ifstream file(entry.path()); // Abrir o arquivo JSON
+            ifstream file(entry.path()); // Abrir o arquivo JSON
             if (file.is_open()) {
                 nlohmann::json jsonData;
                 file >> jsonData; // Ler o conteúdo do arquivo JSON

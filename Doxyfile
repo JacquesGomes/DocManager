@@ -356,7 +356,7 @@ FILE_PATTERNS          = *.c \
                          *.ice
 
 
-RECURSIVE              = NO
+RECURSIVE              = YES
 
 
 EXCLUDE                =
@@ -560,7 +560,7 @@ ECLIPSE_DOC_ID         = org.doxygen.Project
 DISABLE_INDEX          = NO
 
 
-GENERATE_TREEVIEW      = NO
+GENERATE_TREEVIEW      = YES
 
 
 ENUM_VALUES_PER_LINE   = 4
